@@ -7,8 +7,8 @@ This repository contains Verilog modules and their corresponding testbenches for
 - **designs/**: Contains Verilog design files.
 - **testbenches/**: Contains testbench files for simulation.
 
-## How to Use
-You can copy and paste these files into [EDA Playground](https://www.edaplayground.com/) for simulation and verification.
+## Platfrom used
+Designed and simulated on [EDA Playground](https://www.edaplayground.com/).
 
 ## Upcoming
 - 4x1 MUX
