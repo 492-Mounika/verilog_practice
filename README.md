@@ -11,7 +11,7 @@ This repository contains Verilog modules and their corresponding testbenches for
 Designed and simulated on [EDA Playground](https://www.edaplayground.com/) using Icarus Verilog.
 
 ## Upcoming
-- 4x1 MUX
+- Encoder
 - Decoder
 - Flip-flops
 - Counters
