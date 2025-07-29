@@ -1,0 +1,85 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5c4bf33e9bf0 .scope module, "tb" "tb" 2 3;
+ .timescale 0 0;
+v0x5c4bf3400510_0 .var "a", 0 0;
+v0x5c4bf34005d0_0 .net "and_", 0 0, L_0x5c4bf33d7ff0;  1 drivers
+v0x5c4bf3400670_0 .var "b", 0 0;
+v0x5c4bf3400710_0 .net "nand_", 0 0, L_0x5c4bf3400f00;  1 drivers
+v0x5c4bf34007b0_0 .net "nor_", 0 0, L_0x5c4bf3401020;  1 drivers
+v0x5c4bf3400850_0 .net "not_", 0 0, L_0x5c4bf3400c80;  1 drivers
+v0x5c4bf3400920_0 .net "or_", 0 0, L_0x5c4bf33d8060;  1 drivers
+v0x5c4bf34009f0_0 .net "xnor_", 0 0, L_0x5c4bf34012b0;  1 drivers
+v0x5c4bf3400ac0_0 .net "xor_", 0 0, L_0x5c4bf3401130;  1 drivers
+S_0x5c4bf33e9d80 .scope module, "utt" "gates" 2 6, 3 2 0, S_0x5c4bf33e9bf0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "and_";
+    .port_info 3 /OUTPUT 1 "or_";
+    .port_info 4 /OUTPUT 1 "not_";
+    .port_info 5 /OUTPUT 1 "nand_";
+    .port_info 6 /OUTPUT 1 "nor_";
+    .port_info 7 /OUTPUT 1 "xor_";
+    .port_info 8 /OUTPUT 1 "xnor_";
+L_0x5c4bf33d7ff0 .functor AND 1, v0x5c4bf3400510_0, v0x5c4bf3400670_0, C4<1>, C4<1>;
+L_0x5c4bf33d8060 .functor OR 1, v0x5c4bf3400510_0, v0x5c4bf3400670_0, C4<0>, C4<0>;
+L_0x5c4bf3400c80 .functor NOT 1, v0x5c4bf3400510_0, C4<0>, C4<0>, C4<0>;
+L_0x5c4bf3400dd0 .functor AND 1, v0x5c4bf3400510_0, v0x5c4bf3400670_0, C4<1>, C4<1>;
+L_0x5c4bf3400f00 .functor NOT 1, L_0x5c4bf3400dd0, C4<0>, C4<0>, C4<0>;
+L_0x5c4bf3400f70 .functor OR 1, v0x5c4bf3400510_0, v0x5c4bf3400670_0, C4<0>, C4<0>;
+L_0x5c4bf3401020 .functor NOT 1, L_0x5c4bf3400f70, C4<0>, C4<0>, C4<0>;
+L_0x5c4bf3401130 .functor XOR 1, v0x5c4bf3400510_0, v0x5c4bf3400670_0, C4<0>, C4<0>;
+L_0x5c4bf3401240 .functor XOR 1, v0x5c4bf3400510_0, v0x5c4bf3400670_0, C4<0>, C4<0>;
+L_0x5c4bf34012b0 .functor NOT 1, L_0x5c4bf3401240, C4<0>, C4<0>, C4<0>;
+v0x5c4bf33d82f0_0 .net *"_ivl_10", 0 0, L_0x5c4bf3400f70;  1 drivers
+v0x5c4bf33d8390_0 .net *"_ivl_16", 0 0, L_0x5c4bf3401240;  1 drivers
+v0x5c4bf33ffc20_0 .net *"_ivl_6", 0 0, L_0x5c4bf3400dd0;  1 drivers
+v0x5c4bf33ffce0_0 .net "a", 0 0, v0x5c4bf3400510_0;  1 drivers
+v0x5c4bf33ffda0_0 .net "and_", 0 0, L_0x5c4bf33d7ff0;  alias, 1 drivers
+v0x5c4bf33ffeb0_0 .net "b", 0 0, v0x5c4bf3400670_0;  1 drivers
+v0x5c4bf33fff70_0 .net "nand_", 0 0, L_0x5c4bf3400f00;  alias, 1 drivers
+v0x5c4bf3400030_0 .net "nor_", 0 0, L_0x5c4bf3401020;  alias, 1 drivers
+v0x5c4bf34000f0_0 .net "not_", 0 0, L_0x5c4bf3400c80;  alias, 1 drivers
+v0x5c4bf34001b0_0 .net "or_", 0 0, L_0x5c4bf33d8060;  alias, 1 drivers
+v0x5c4bf3400270_0 .net "xnor_", 0 0, L_0x5c4bf34012b0;  alias, 1 drivers
+v0x5c4bf3400330_0 .net "xor_", 0 0, L_0x5c4bf3401130;  alias, 1 drivers
+    .scope S_0x5c4bf33e9bf0;
+T_0 ;
+    %vpi_call 2 8 "$monitor", "a = %b b = %b and = %b or = %b not = %b nand = %b nor = %b xor = %b xnor = %b", v0x5c4bf3400510_0, v0x5c4bf3400670_0, v0x5c4bf34005d0_0, v0x5c4bf3400920_0, v0x5c4bf3400850_0, v0x5c4bf3400710_0, v0x5c4bf34007b0_0, v0x5c4bf3400ac0_0, v0x5c4bf34009f0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5c4bf3400510_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5c4bf3400670_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5c4bf3400510_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5c4bf3400670_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5c4bf3400510_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5c4bf3400670_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5c4bf3400510_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5c4bf3400670_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 13 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbenches_verilog/gates_testbench.v";
+    "designs_verilog/gates_design.v";
